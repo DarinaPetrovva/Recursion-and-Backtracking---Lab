@@ -1,0 +1,25 @@
+using System;
+
+namespace zad4praktikum
+{
+    class Program
+    {
+        static int[] fibNumbers;
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            fibNumbers = new int[n + 1];
+            fibNumbers[0] = fibNumbers[1] = 1;
+            Console.WriteLine(Fib(n));
+        }
+
+         static int Fib(int n)
+        {
+            if (fibNumbers[n] != 0)
+            {
+                return fibNumbers[n];
+            }
+            return fibNumbers[n] = Fib(n - 1) + Fib(n - 2);
+        }
+    }
+}
