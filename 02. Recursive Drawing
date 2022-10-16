@@ -1,0 +1,21 @@
+using System;
+
+namespace zad6modul
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            Rec(n);
+        }
+
+        static void Rec(int n)
+        {   if (n == 0) return;
+            Console.WriteLine(new string('*', n));
+           
+            Rec(n - 1);
+            Console.WriteLine(new string('#', n));
+        }
+    }
+}
