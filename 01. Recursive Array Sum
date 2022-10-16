@@ -1,0 +1,22 @@
+using System;
+using System.Linq;
+
+namespace zad1praktikum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] arr = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            int lastindex = arr.Length - 1;
+            int result = (SumArray(arr, lastindex));
+            Console.WriteLine(result);
+        }
+
+        static int SumArray(int[] arr,int lastindex)
+        {
+            if (lastindex < 0) return 0;
+            return arr[lastindex] + SumArray(arr, lastindex - 1);
+        }
+    }
+}
